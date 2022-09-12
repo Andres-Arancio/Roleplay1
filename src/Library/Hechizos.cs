@@ -1,11 +1,17 @@
 namespace Roleplay;
 using System.Collections;
 
-public class Hechizos
+public class Hechizo
 {
     string Nombre {get ; set ;}
     int Ataque {get ; set ;}
     int Curar {get ; set ;}
-    
+
+    new Hechizo(string nuevoNombre, string nuevoAtaque, string nuevoCurar)
+    {
+        this.Nombre = nuevoNombre;
+        this.Ataque = nuevoAtaque;
+        this.Curar = nuevoCurar;
+    }
 
 }

@@ -25,9 +25,4 @@ public class Item
         this.Defensa = nuevoDefensa;
         this.Curar= nuevoCurar;
     }
-
-    public void RemoverItem()
-    {
-        this = null;
-    }
 }
