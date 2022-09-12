@@ -28,6 +28,6 @@ public class Item
 
     public void RemoverItem()
     {
-        this = null;
+         = null;
     }
 }
