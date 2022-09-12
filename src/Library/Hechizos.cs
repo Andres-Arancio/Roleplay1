@@ -7,7 +7,7 @@ public class Hechizo
     int Ataque {get ; set ;}
     int Curar {get ; set ;}
 
-    new Hechizo(string nuevoNombre, string nuevoAtaque, string nuevoCurar)
+    public Hechizo(string nuevoNombre, string nuevoAtaque, string nuevoCurar)
     {
         this.Nombre = nuevoNombre;
         this.Ataque = nuevoAtaque;
