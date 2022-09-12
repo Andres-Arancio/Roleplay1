@@ -18,15 +18,15 @@ public class Item
     Constructor de Item
     </summary>
     */
-    public new Item(string newName, int newAttack, int newDefense, int newHeal)
+    public new Item(string nuevoNombre, int nuevoAtaque, int nuevoDefensa, int nuevoCurar)
     {
-        this.Name = newName;
-        this.baseAttack = newAttack;
-        this.baseDefense = newDefense;
-        this.baseHeal= newHeal;
+        this.Nombre = nuevoNombre;
+        this.Ataque = nuevoAtaque;
+        this.Defensa = nuevoDefensa;
+        this.Curar= nuevoCurar;
     }
 
-    public void RemoveItem()
+    public void RemoverItem()
     {
         this = null;
     }
