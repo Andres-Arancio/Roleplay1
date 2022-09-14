@@ -9,16 +9,16 @@ public class Item
     </summary>
     */
     string Nombre {get ; set ;}
-    int Ataque {get ; set ;}
-    int Defensa {get ; set ;}
-    int Curar {get ; set ;}
+    public int Ataque {get ; set ;}
+    public int Defensa {get ; set ;}
+    public int Curar {get ; set ;}
 
     /*
     <summary>
     Constructor de Item
     </summary>
     */
-    public new Item(string nuevoNombre, int nuevoAtaque, int nuevoDefensa, int nuevoCurar)
+    public Item(string nuevoNombre, int nuevoAtaque, int nuevoDefensa, int nuevoCurar)
     {
         this.Nombre = nuevoNombre;
         this.Ataque = nuevoAtaque;

@@ -2,12 +2,13 @@ using System;
 using System.Collections.Generic;
 namespace Roleplay
 {
-    class Enano
+    public class Enano
     {
-        public string Nombre {get;}
-        public int Vida{get;}
-        public int Ataque{get;}
-        public int Defensa{get;}
+        public string Nombre {get;set;}
+        public int Vida{get;set;}
+        public int Ataque{get;set;}
+        public int Defensa{get;set;}
+        public Enano(){}
         public Enano(string Nombre){
             this.Nombre=Nombre;
             this.Vida=150;
@@ -25,5 +26,11 @@ namespace Roleplay
         }
 
         ///Metodo para calcular el daño según los items
+        public void CalcularEstadisticas(){
+            foreach(Item i in Items){
+                this.Ataque=this.Ataque+i.Ataque;
+                this.Defensa=this.Defensa+i.Defensa;
+            }
+        }
     }
 }

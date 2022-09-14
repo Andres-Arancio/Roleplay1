@@ -12,6 +12,10 @@ namespace Roleplay
 
             Hechizo fuego = new Hechizo("Bola de Fuego", 20, 0);
             Hechizo curar = new Hechizo("Toque Curativo", 0, 10);
+            Enano enano=new Enano("Pitufo");
+            enano.AgregarItem(espada);
+            enano.AgregarItem(armadura);
+            enano.CalcularEstadisticas();
         }
     }
 }
