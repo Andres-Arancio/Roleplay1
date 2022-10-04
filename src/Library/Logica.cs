@@ -3,18 +3,15 @@ using System.Collections;
 
 public class Logica
 {
-    public static void Atacar(object Atacante, TipoPersonaje personaje1, object atacado, TipoPersonaje personaje2)
+    public Logica(){}
+    public static void Atacar(IPersonaje Atacante,IPersonaje Atacado)
     {
-        
+        Atacado.Vida=Atacado.Vida-Atacante.Ataque;
         
     }
 
 
 
+
 }
 
-public enum TipoPersonaje{
-    Elfo,
-    Mago,
-    Enano
-}

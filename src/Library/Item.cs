@@ -1,14 +1,14 @@
 namespace Roleplay;
 using System.Collections;
 
-public class Item
+public class Item: IItemAtaque,IItemDefensa,IItemCurar
 {
     /*
     <summary>
     El item posee nombre, un modificador de ataque, un modificador de defensa y un factor de curar
     </summary>
     */
-    string Nombre {get ; set ;}
+    public string Nombre {get ; set ;}
     public int Ataque {get ; set ;}
     public int Defensa {get ; set ;}
     public int Curar {get ; set ;}
