@@ -30,6 +30,13 @@ namespace Roleplay
         }
 
         ///Metodo para calcular el daño según los items
+        /// 
+        public string Atacar(IPersonaje Atacado)
+        {
+            Atacado.Vida=Atacado.Vida-(this.Ataque-Atacado.Defensa);
+            return $"El {this.Nombre} a inflingido un daño de {this.Ataque-Atacado.Defensa} a {Atacado.Nombre}.";
+
+        }
 
 
         public string InvocarPersonaje(){

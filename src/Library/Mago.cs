@@ -25,8 +25,8 @@ namespace Roleplay
 
         public string Atacar(IPersonaje Atacado)
         {
-            Atacado.Vida=Atacado.Vida-this.Ataque;
-            return $"El {this.Nombre} a inflingido un daño de {this.Ataque} a {Atacado.Nombre}.";
+            Atacado.Vida=Atacado.Vida-(this.Ataque-Atacado.Defensa);
+            return $"El {this.Nombre} a inflingido un daño de {this.Ataque-Atacado.Defensa} a {Atacado.Nombre}.";
 
         }
 
