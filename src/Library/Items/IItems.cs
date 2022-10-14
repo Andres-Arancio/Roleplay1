@@ -8,9 +8,7 @@ namespace Roleplay
         public int Ataque {get ; set ;}
         public int Defensa {get ; set ;}
         public int Curar {get ; set ;}
-
     }
-
 }
 
     

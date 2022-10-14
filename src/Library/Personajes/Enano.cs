@@ -2,36 +2,30 @@ using System;
 using System.Collections.Generic;
 namespace Roleplay
 {
-    public class Elfo:IPersonaje
+    public class Enano:IPersonaje
     {
         public string Nombre {get;set;}
         public int Vida{get;set;}
         public int Ataque{get;set;}
         public int Defensa{get;set;}
-        public int Curar{get;set;}
-        public Elfo(){}
-        public Elfo(string Nombre){
+        public Enano(){}
+        public Enano(string Nombre){
             this.Nombre=Nombre;
-            this.Vida=140;
-            this.Ataque=20;
-            this.Defensa=30;
+            this.Vida=150;
+            this.Ataque=40;
+            this.Defensa=50;
         }
         List<Item> Items = new List<Item>();
         public void AgregarItem(Item item){
             Items.Add(item);
             this.Ataque=this.Ataque+item.Ataque;
             this.Defensa=this.Defensa+item.Defensa;
-            this.Curar=this.Curar+item.Curar;
         }
-
-        
         public void BorrarItem(Item item){
             Items.Remove(item);
             this.Ataque=this.Ataque-item.Ataque;
             this.Defensa=this.Defensa-item.Defensa;
-            this.Curar=this.Curar-item.Curar;
         }
-
         public string Atacar(IPersonaje Atacado)
         {
             if ((this.Ataque-Atacado.Defensa)>0)
@@ -41,10 +35,7 @@ namespace Roleplay
             {
                 return $"No se ha inflingido daño.";
             }
-
         }
-
-        ///Metodo para calcular el daño según los items
         public string InvocarPersonaje(){
             return $"El {this.Nombre} tiene un ataque de {this.Ataque}, una defensa de {this.Defensa} y actualmente tiene {this.Vida} HP.";
         }

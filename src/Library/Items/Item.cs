@@ -12,8 +12,6 @@ public class Item:IItems
     public int Ataque {get ; set ;}
     public int Defensa {get ; set ;}
     public int Curar {get ; set ;}
-    
-
     /*
     <summary>
     Constructor de Item

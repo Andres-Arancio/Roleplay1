@@ -2,35 +2,44 @@ using System;
 using System.Collections.Generic;
 namespace Roleplay
 {
-    public class Enano:IPersonaje
+    public class Mago:IPersonaje,IMagia
     {
         public string Nombre {get;set;}
         public int Vida{get;set;}
         public int Ataque{get;set;}
         public int Defensa{get;set;}
-        public Enano(){}
-        public Enano(string Nombre){
+        public int PoderMagico {get ; set ;}
+        public Mago(){}
+        public Mago(string Nombre){
             this.Nombre=Nombre;
-            this.Vida=150;
-            this.Ataque=40;
-            this.Defensa=50;
+            this.Vida=110;
+            this.Ataque=50;
+            this.Defensa=10;
+            this.PoderMagico=0;
         }
-        List<Item> Items = new List<Item>();
-        public void AgregarItem(Item item){
+        List<IItems> Items = new List<IItems>();        
+        public void AgregarItem(IItems item){
             Items.Add(item);
             this.Ataque=this.Ataque+item.Ataque;
             this.Defensa=this.Defensa+item.Defensa;
-        }
 
-        
-        public void BorrarItem(Item item){
+        }
+        public void BorrarItem(IItems item){
             Items.Remove(item);
             this.Ataque=this.Ataque-item.Ataque;
             this.Defensa=this.Defensa-item.Defensa;
         }
-
-        ///Metodo para calcular el daño según los items
-        /// 
+        public void AgregarLibroHechizo(LibroHechizos libroHechizos)
+        {
+            Items.Add(libroHechizos);
+            this.PoderMagico=this.PoderMagico+libroHechizos.PoderMagico;
+            
+        }
+        public void BorrarLibroHechizo(LibroHechizos libroHechizos)
+        {
+            Items.Remove(libroHechizos);
+            this.PoderMagico=this.PoderMagico-libroHechizos.PoderMagico;
+        }
         public string Atacar(IPersonaje Atacado)
         {
             if ((this.Ataque-Atacado.Defensa)>0)
@@ -42,8 +51,6 @@ namespace Roleplay
             }
 
         }
-
-
         public string InvocarPersonaje(){
             return $"El {this.Nombre} tiene un ataque de {this.Ataque}, una defensa de {this.Defensa} y actualmente tiene {this.Vida} HP.";
         }
