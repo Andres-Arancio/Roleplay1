@@ -33,8 +33,13 @@ namespace Roleplay
         /// 
         public string Atacar(IPersonaje Atacado)
         {
-            Atacado.Vida=Atacado.Vida-(this.Ataque-Atacado.Defensa);
-            return $"El {this.Nombre} a inflingido un daño de {this.Ataque-Atacado.Defensa} a {Atacado.Nombre}.";
+            if ((this.Ataque-Atacado.Defensa)>0)
+            {Atacado.Vida=Atacado.Vida-(this.Ataque-Atacado.Defensa);
+            return $"El {this.Nombre} a inflingido un daño de {this.Ataque-Atacado.Defensa} a {Atacado.Nombre}.";}
+            else 
+            {
+                return $"No se ha inflingido daño.";
+            }
 
         }
 

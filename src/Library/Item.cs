@@ -1,7 +1,7 @@
 namespace Roleplay;
 using System.Collections;
 
-public class Item: IItemAtaque,IItemDefensa,IItemCurar
+public class Item:IItems
 {
     /*
     <summary>
@@ -12,6 +12,7 @@ public class Item: IItemAtaque,IItemDefensa,IItemCurar
     public int Ataque {get ; set ;}
     public int Defensa {get ; set ;}
     public int Curar {get ; set ;}
+    
 
     /*
     <summary>
