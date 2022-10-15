@@ -74,7 +74,7 @@ namespace Roleplay
         public void AtacarElfoDano()
         {
             Enano Enano5 = new Enano("Bombur");
-            Enano Mago2 = new Enano("Celuran");
+            Mago Mago2 = new Mago("Celuran");
             Item Espada1 = new Item("Mandoble Enano",30,5,0);
             Enano5.AgregarItem(Espada1);
             int VidaEsperado = Mago2.Vida-Enano5.Ataque+Mago2.Defensa;
