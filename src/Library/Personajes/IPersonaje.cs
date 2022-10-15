@@ -13,13 +13,10 @@ namespace Roleplay
         {
             
         }
-
-        
         public void BorrarItem(Item item)
         {
             
         }
-
         public void Atacar()
         {
 
@@ -30,7 +27,4 @@ namespace Roleplay
         }
 
     }
-
-
-
 }

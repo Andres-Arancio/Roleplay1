@@ -56,6 +56,19 @@ namespace Roleplay
             }
 
         }
+        public string LanzarMagia(int Dificultad)
+        {
+            string result;
+            if(this.PoderMagico>=Dificultad)
+            {
+                result = $"El mago {this.Nombre} usa su magia!";
+            }
+            else
+            {
+                result = $"El mago {this.Nombre} no tiene suficiente poder para usar su magia asi";
+            }
+            return result;
+        }
         public string InvocarPersonaje(){
             return $"El {this.Nombre} tiene un ataque de {this.Ataque}, una defensa de {this.Defensa} y actualmente tiene {this.Vida} HP.";
         }

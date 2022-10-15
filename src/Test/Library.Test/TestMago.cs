@@ -121,13 +121,32 @@ namespace Roleplay
         /// </summary>
         public void CurarMago()
         {
-            Mago Mago6 = new Mago("Alister");
+            Mago Mago8 = new Mago("Alister");
             Elfo Elfo3 = new Elfo("Gildor");
-            int VidaEsperado = Mago6.Vida;
-            string resultado = Elfo3.Atacar(Mago6);
-            Mago6.CuracionTotal();
-            Assert.AreEqual($"El {Elfo3.Nombre} a inflingido un daño de {Elfo3.Ataque-Mago6.Defensa} a {Mago6.Nombre}.", resultado);
-            Assert.AreEqual(Mago6.Vida,VidaEsperado);
+            int VidaEsperado = Mago8.Vida;
+            string resultado = Elfo3.Atacar(Mago8);
+            Mago8.CuracionTotal();
+            Assert.AreEqual($"El {Elfo3.Nombre} a inflingido un daño de {Elfo3.Ataque-Mago8.Defensa} a {Mago8.Nombre}.", resultado);
+            Assert.AreEqual(Mago8.Vida,VidaEsperado);
+        }
+
+        [Test]
+        /// <summary>
+        /// LanzarMagia prueba si un mago tiene el poder magico suficiente para utilizar su magia basado en un valor de desafio arbitrario
+        /// </summary>
+        public void LanzarMagia()
+        {
+            Mago Mago9 = new Mago("Melkor");
+            LibroHechizos Libro2 = new LibroHechizos();
+            Hechizo Hechizo3 = new Hechizo("Lluvia de Meteoros",100);
+            Libro2.AgregarHechizo(Hechizo3);
+            Mago9.AgregarLibroHechizo(Libro2);
+            int Desafio1 = 100;
+            int Desafio2 = 120;
+            string resultado1 = $"El mago {Mago9.Nombre} usa su magia!";
+            string resultado2 = $"El mago {Mago9.Nombre} no tiene suficiente poder para usar su magia asi";
+            Assert.AreEqual(Mago9.LanzarMagia(Desafio1),resultado1);
+            Assert.AreEqual(Mago9.LanzarMagia(Desafio2),resultado2);        
         }
     }
 }
