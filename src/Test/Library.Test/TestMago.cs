@@ -114,5 +114,20 @@ namespace Roleplay
             Mago7.BorrarLibroHechizo(Libro2);
             Assert.AreEqual(PoderEsperado,Mago7.PoderMagico);
         }
+                
+        [Test]
+        /// <summary>
+        /// CurarMago prueba que un Mago se cura totalmente la vida si se cura
+        /// </summary>
+        public void CurarMago()
+        {
+            Mago Mago6 = new Mago("Alister");
+            Elfo Elfo3 = new Elfo("Gildor");
+            int VidaEsperado = Mago6.Vida;
+            string resultado = Elfo3.Atacar(Mago6);
+            Mago6.CuracionTotal();
+            Assert.AreEqual($"El {Elfo3.Nombre} a inflingido un daño de {Elfo3.Ataque-Mago6.Defensa} a {Mago6.Nombre}.", resultado);
+            Assert.AreEqual(Mago6.Vida,VidaEsperado);
+        }
     }
 }

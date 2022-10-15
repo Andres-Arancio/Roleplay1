@@ -71,7 +71,7 @@ namespace Roleplay
         /// <summary>
         /// AtacarEnanoDano prueba que un enano con mas ataque que la defensa de otro personaje, al atacarlo el otro personaje pierde vida igual que la diferencia entre el ataque del enano y la defensa del otro
         /// </summary>
-        public void AtacarElfoDano()
+        public void AtacarEnanoDano()
         {
             Enano Enano5 = new Enano("Bombur");
             Mago Mago2 = new Mago("Celuran");
@@ -81,6 +81,23 @@ namespace Roleplay
             string resultado = Enano5.Atacar(Mago2);
             Assert.AreEqual(VidaEsperado,Mago2.Vida);
             Assert.AreEqual($"El {Enano5.Nombre} a inflingido un daño de {Enano5.Ataque-Mago2.Defensa} a {Mago2.Nombre}.", resultado);
+        }
+
+        [Test]
+        /// <summary>
+        /// CurarEnano prueba que un enano se cura totalmente la vida si se cura
+        /// </summary>
+        public void CurarEnano()
+        {
+            Enano Enano6 = new Enano("Thrain");
+            Mago Mago3 = new Mago("Alister");
+            Item Armadura1 = new Item("Tunica de Debilidad",0,-10,0);
+            Enano6.AgregarItem(Armadura1);
+            int VidaEsperado = Enano6.Vida;
+            string resultado = Mago3.Atacar(Enano6);
+            Enano6.CuracionTotal();
+            Assert.AreEqual($"El {Mago3.Nombre} a inflingido un daño de {Mago3.Ataque-Enano6.Defensa} a {Enano6.Nombre}.", resultado);
+            Assert.AreEqual(Enano6.Vida,VidaEsperado);
         }
     }
 }

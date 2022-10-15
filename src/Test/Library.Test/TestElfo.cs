@@ -82,5 +82,20 @@ namespace Roleplay
             Assert.AreEqual(VidaEsperado,Enano2.Vida);
             Assert.AreEqual($"El {Elfo5.Nombre} a inflingido un daño de {Elfo5.Ataque-Enano2.Defensa} a {Enano2.Nombre}.", resultado);
         }
+
+        [Test]
+        /// <summary>
+        /// CurarElfo prueba que un elfo se cura totalmente la vida si se cura
+        /// </summary>
+        public void CurarElfo()
+        {
+            Elfo Elfo6 = new Elfo("Arwen");
+            Enano Enano3 = new Enano("Lotho");
+            int VidaEsperado = Elfo6.Vida;
+            string resultado = Enano3.Atacar(Elfo6);
+            Elfo6.CuracionTotal();
+            Assert.AreEqual($"El {Enano3.Nombre} a inflingido un daño de {Enano3.Ataque-Elfo6.Defensa} a {Elfo6.Nombre}.", resultado);
+            Assert.AreEqual(Elfo6.Vida,VidaEsperado);
+        }
     }
 }
