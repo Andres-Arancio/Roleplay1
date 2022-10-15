@@ -40,6 +40,11 @@ namespace Roleplay
             Items.Remove(libroHechizos);
             this.PoderMagico=this.PoderMagico-libroHechizos.PoderMagico;
         }
+        public void CuracionTotal()
+        {
+            this.Vida=110;
+            
+        }
         public string Atacar(IPersonaje Atacado)
         {
             if ((this.Ataque-Atacado.Defensa)>0)

@@ -36,6 +36,11 @@ namespace Roleplay
                 return $"No se ha inflingido daño.";
             }
         }
+        public void CuracionTotal()
+        {
+            this.Vida=150;
+            
+        }
         public string InvocarPersonaje(){
             return $"El {this.Nombre} tiene un ataque de {this.Ataque}, una defensa de {this.Defensa} y actualmente tiene {this.Vida} HP.";
         }

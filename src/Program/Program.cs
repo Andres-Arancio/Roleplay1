@@ -22,6 +22,8 @@ namespace Roleplay
             Console.WriteLine(enano.InvocarPersonaje());
             Console.WriteLine(mago.Atacar(enano));
             Console.WriteLine(enano.InvocarPersonaje());
+            enano.CuracionTotal();
+            Console.WriteLine(enano.InvocarPersonaje());
         }
     }
 }
