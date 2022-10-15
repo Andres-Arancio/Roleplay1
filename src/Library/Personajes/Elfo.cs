@@ -29,6 +29,11 @@ namespace Roleplay
             this.Defensa=this.Defensa-item.Defensa;
             this.Curar=this.Curar-item.Curar;
         }
+        public void CuracionTotal()
+        {
+            this.Vida=140;
+            
+        }
         public string Atacar(IPersonaje Atacado)
         {
             if ((this.Ataque-Atacado.Defensa)>0)

@@ -20,7 +20,14 @@ namespace Roleplay
             
         }
 
-        ///Metodo para calcular el daño según los items
+        public void Atacar()
+        {
+
+        }
+        public void CuracionTotal()
+        {
+
+        }
 
     }
 
